@@ -1,141 +1,107 @@
-<p align="center">
-<img src="https://i.loli.net/2017/09/07/59b1367f76fdb.png" alt="Material Render Phone">
-</p>
+# 星合の空
 
-<h1 align="center"><a href="https://material.viosey.com" target="_blank">Material Theme</a></h1>
+欢迎访问我的个人主页！下面向你介绍一下我自己吧\~
 
-> Nature, Pure | 原质，纯粹
+<!-- .slide -->
 
-<p align="center">
-<img alt="Version" src="https://img.shields.io/badge/version-1.5.6-757575.svg?style=flat-square"/>
-<a href="https://viosey.com"><img alt="Author" src="https://img.shields.io/badge/author-Viosey-red.svg?style=flat-square"/></a>
-<a href="https://hexo.io"><img alt="Hexo" src="https://img.shields.io/badge/hexo-3.0+-0e83cd.svg?style=flat-square"/></a>
-<a href="https://nodejs.org/"><img alt="node.js" src="https://img.shields.io/badge/node.js-6.0%2B-43853d.svg?style=flat-square"/></a>
-<a href="https://travis-ci.org/viosey/hexo-theme-material"><img alt="Build Status" src="https://img.shields.io/travis/viosey/hexo-theme-material.svg?style=flat-square"/></a>
-<a href="https://www.npmjs.com/package/hexo-material"><img alt="npm" src="https://img.shields.io/npm/dt/hexo-material.svg?style=flat-square"/></a>
-</p>
+## Contact
 
+- Address: **Sun Yat-sen University - 132 Waihuan East Rd. - Guangzhou, China**
+- Phone: **+86 18756280097**
+- Site: **<https://wu-kan.cn>**
 
-## Contents 目录
+<!-- .slide vertical=true -->
 
-- [Introduction 介绍](#introduction-介绍)
-- [Demo 演示](#demo-演示)
-- [Download 下载](#download-下载)
-- [Docs 文档](#docs-文档)
-- [Contributing 贡献](#contributing-贡献)
-- [License 许可证](#license-许可证)
-- [Changelog 更新日志](#changelog-更新日志)
-- [Support 支持](#support-支持)
-- [Render 渲染](#render-渲染)
+- E-mail:
+  - **[i@wu-kan.cn](mailto:i@wu-kan.cn)**
+  - **[wukan3@mail2.sysu.edu.cn](mailto:wukan3@mail2.sysu.edu.cn)**
+- WeChat: **Wu-\_-Kan**
+- QQ: **942759535**
 
+<!-- .slide -->
 
-## Introduction 介绍
+## Education
 
-An elegant, Pure & Material Design Theme for Hexo.  
-优雅、纯粹、质感的 Hexo 主题。
+<!-- .slide vertical=true -->
 
+School of Data and Computer Science, Sun Yat-sen University, Guangzhou
 
-## Demo 演示
+- Bachelor of Computer Science (Supercomputer Class), Sept. 2017 - Jul. 2021(expected)
+  - Principle of Supercomputer
+  - Parallel and Distributed Computing
+  - High Performance Computing
+  - Multicore Computing
 
-- [Viosey's Blog](https://blog.viosey.com)
-- [neoFelhz's Blog](https://blog.nfz.moe)
-- [liyin's Blog](https://liyin.date)
+<!-- .slide -->
 
+## Projects
 
-## Download 下载
+<!-- .slide vertical=true -->
 
-#### [Download latest release version](https://github.com/viosey/hexo-theme-material/releases/latest)
+- [jekyll-theme-WuK](https://jekyll-theme-WuK.wu-kan.cn/)[![Star](https://img.shields.io/github/stars/wu-kan/wu-kan.github.io.svg)](https://github.com/wu-kan/wu-kan.github.io)[![Fork](https://img.shields.io/github/forks/wu-kan/wu-kan.github.io.svg)](https://github.com/wu-kan/wu-kan.github.io/fork)
+  - A static blog system with content-first, sliding sidebar theme.
+  - Powered by Jekyll.
 
-> Should be the most stable. Recommended for most users.  
-> 最稳定的版本，适合所有的用户。
+<!-- .slide -->
 
-#### [Download latest canary branch](https://github.com/viosey/hexo-theme-material/archive/canary.zip)
+## Honors
 
-> Maybe unstable, but includes latest features. Recommended for developers.  
-> 包含最新的、尚在开发中的特性，可能不稳定；适合进阶用户。
+<!-- .slide vertical=true -->
 
-#### [Download other version](https://github.com/viosey/hexo-theme-material/releases)
+- **Gold Medal (Rank 4)**, [CCF Collegiate Computer Systems & Programming Contest](https://wu-kan.cn/_posts/2020-10-17-2020-CCF-CCSP%E7%AB%9E%E8%B5%9B-%E5%90%AB%E5%88%86%E8%B5%9B%E5%8C%BA%E7%AB%9E%E8%B5%9B/), South China Division, Oct. 2020
+- **First Scholarship**, Oct. 2020
+- **Silver Medal (Rank 2)**, The 8th "Intel Cup" [Parallel Application Challenge](http://sdcs.sysu.edu.cn/content/5501), Sept. 2020
+- **First Prize (Rank 3) & Winner Prize (Rank 5)**, [Priority Research Application](https://cas-pra.sugon.com/webnews/detail/205), Aug. 2020
 
-> You can decide which version to use. May no longer provide support.  
-> 你可以自己决定想要使用的版本；部分版本可能不再提供技术支持。
+<!-- .slide vertical=true -->
 
-#### [Download using git](https://github.com/viosey/hexo-theme-material/releases)
+- **Top 0.05% in 11395**, [The 18th CCF Certified Software Professional](https://wu-kan.cn/_posts/2019-12-16-%E7%AC%AC%E5%8D%81%E5%85%AB%E6%AC%A1CCF%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BD%AF%E4%BB%B6%E8%83%BD%E5%8A%9B%E8%AE%A4%E8%AF%81/), Dec. 2019
+- **Silver Medal**, [ICPC Asia Regional Contest Xuzhou Site](https://wu-kan.cn/_posts/2019-11-04-%E5%86%8D%E8%A7%81-%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/), Nov. 2019
+- **Second Scholarship**, Oct. 2019
+- **First Prize**, China Collegiate Programming Contest, Guangdong Division, May 2019
 
-> You can using git to choose which branch you want. For developer only.  
-> 你可以自己决定想要使用的分支；仅限开发者使用。
+<!-- .slide vertical=true -->
 
-```bash
-cd themes
-git clone https://github.com/viosey/hexo-theme-material.git material
-cd material
-git checkout {branch/tags name}
-```
+- **Third Scholarship**, Oct. 2018
+- **First Prize**, China Collegiate Programming Contest, Guangdong Division, May 2018
 
-----
+<!-- .slide -->
 
-> ATTENTION! As the theme is developing, the theme config template will changes. To avoid conflict for users who are using `git pull` to upgrade the theme, we save the theme config template as `_config.template.yml`. You should make a copy of it and rename to `_config.yml`, then configure `_config.yml` when using the theme.  
-> **注意！** 在主题的开发迭代过程中，主题的配置文件模板 可能会改动。为了避免使用 `git pull` 更新主题的用户出现冲突，我们将 主题配置文件模板 命名为 `_config.template.yml`。配置主题时，你应该拷贝一份 `_config.template.yml` 并将其重命名为 `_config.yml`。
+## Leadership
 
-## Docs 文档
+- Leader of [SYSU-SCC](https://github.com/SYSU-SCC)
 
-[Material Theme Docs](https://material.viosey.com/docs/)
+<!-- .slide -->
 
-[Material 主题文档](https://material.viosey.com/docs/)
+## Blogs
 
-> [Docs Source Code](https://github.com/neko-dev/material-theme-docs)
+- [基于 Jekyll 搭建个人博客](https://wu-kan.cn/_posts/2019-01-18-%E5%9F%BA%E4%BA%8EJekyll%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/)
+- [我的算法竞赛模板](https://wu-kan.cn/_posts/2019-02-04-%E6%88%91%E7%9A%84%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E6%A8%A1%E6%9D%BF/)
+- [这一年的一点感想](https://wu-kan.cn/_posts/2019-07-18-%E8%BF%99%E4%B8%80%E5%B9%B4%E7%9A%84%E4%B8%80%E7%82%B9%E6%84%9F%E6%83%B3/)
+- [再见，算法竞赛！](https://wu-kan.cn/_posts/2019-11-04-%E5%86%8D%E8%A7%81-%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/)
 
+<!-- .slide vertical=true -->
 
-## Contributing 贡献
+- [Markdown 写作心得](https://wu-kan.cn/_posts/2020-01-18-Markdown%E5%86%99%E4%BD%9C%E5%BF%83%E5%BE%97/)
+- [今日此时所想之事](https://wu-kan.cn/_posts/2020-01-24-%E4%BB%8A%E6%97%A5%E6%AD%A4%E6%97%B6%E6%89%80%E6%83%B3%E4%B9%8B%E4%BA%8B/)
+- [十月九日](http://wu-kan.cn/_posts/2020-10-09-%E5%8D%81%E6%9C%88%E4%B9%9D%E6%97%A5/)
 
-All kinds of contributions (enhancements, new features, documentation & code improvements, issues & bugs reporting) are welcome.
+<!-- .slide -->
 
-Before you start your contributing, please read the [Contributing Rules Wiki](https://github.com/viosey/hexo-theme-material/wiki) first.
+## Skills
 
-欢迎各种形式的贡献，包括但不限于优化，添加功能，文档 & 代码的改进，问题和 bugs 的报告。期待你的 `Pull Request`。
+<!-- .slide vertical=true -->
 
-在参与贡献之前，请阅读[项目贡献 Wiki](https://github.com/viosey/hexo-theme-material/wiki)，了解如何为 Material 主题贡献。
+- **C/C++**, Familiar
+  - **OpenMP**, Familiar
+  - **MPI**, Familiar&Learning
+  - **CUDA**, Familiar&Learning
+- **Python**, Familiar
 
-## Changelog 更新日志
+<!-- .slide vertical=true -->
 
-[View our release notes](https://github.com/viosey/hexo-theme-material/releases)
-
-[阅读我们的更新日志](https://github.com/viosey/hexo-theme-material/releases)
-
-
-## License 许可证
-
-[![license](https://img.shields.io/github/license/viosey/hexo-theme-material.svg?style=flat-square)](https://github.com/viosey/hexo-theme-material/blob/master/LICENSE)
-
-Open sourced under the GPL v3.0 license.
-
-根据 GPL V3.0 许可证开源。
-
-## Support 支持
-
-### BroswerStack
-
-![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=V1VkWmJMRjJqcHBjN1BIVFRlNzExM05XUk5hemcydEpZTHRBdGd5V244ST0tLTlvNklDT1NuVXFDaTh0RDBnQ3RCdXc9PQ==--c986c45d7c10a3264f46b414944d6393ba74ea22%)
-
-Proudly using BrowserStack.
-
-[![](https://i.loli.net/2017/09/27/59cbc16b0f8b4.png)](https://www.browserstack.com/)
-
-> **BrowserStack** is a cloud-based cross-browser testing tool that enables developers to test their websites across various browsers on different operating systems and mobile devices, without requiring users to install virtual machines, devices or emulators.
-
-### jsDelivr
-
-Thanks jsDelivr for providing MaterialCDN service.
-
-> **jsDelivr** – Open Source CDN. free, fast, and reliable. You can using the files from GitHub or NPM and serve them using jsDelivr.
-
-[![](https://data.jsdelivr.com/v1/package/npm/hexo-material/badge)](https://www.jsdelivr.com/package/npm/hexo-material)
-
-[`http://cdn.jsdelivr.net/npm/hexo-material/source/`](http://cdn.jsdelivr.net/npm/hexo-material/source/)
-
-[![](https://data.jsdelivr.com/v1/package/gh/viosey/hexo-theme-material/badge)](https://www.jsdelivr.com/package/gh/viosey/hexo-theme-material)
-
-[`https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material/source/`](https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material/source/)
-
-## Render 渲染
-
-![Materia-overview-tiny.png](https://i.loli.net/2017/09/28/59cccb0b25520.png)
+- **Markdown**, Familiar
+- **$\LaTeX$**, Familiar
+- **Linux**, Familiar&Learning
+- **Git**, Familiar
+- **VSCode**, Familiar
