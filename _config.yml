@@ -1,4 +1,4 @@
-title: wu-kan # 站点标题
+title: gxy001 # 站点标题
 description: | # 头像背后的信息（html格式），<br/>代表换行
   SYSU超算17级在读<br/>
   水野爱<br/>
@@ -62,12 +62,12 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
             - | # 网站小图标，可换成你自己的图片，改href中的部分即可
               <link
                 rel="apple-touch-icon-precomposed"
-                href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=320"
+                href="https://cdn.luogu.com.cn/upload/usericon/55707.png"
               />
               <link
                 rel="shortcut
                 icon"
-                href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=32"
+                href="https://cdn.luogu.com.cn/upload/usericon/55707.png"
               />
             - | # 来自lanyon的页面样式，不要改
               <link
