@@ -1,9 +1,6 @@
 title: gxy001 # 站点标题
 description: | # 头像背后的信息（html格式），<br/>代表换行
   Hello<br/>
-  <a href="mailto:i@wu-kan.cn">
-    <i class="fas fa-envelope"></i>
-  </a>
   <a href="https://github.com/missingroom">
     <i class="fab fa-github"></i>
   </a>
