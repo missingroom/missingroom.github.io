@@ -1,7 +1,34 @@
-title: gxy001 # 站点标题
+title: wu-kan # 站点标题
 description: | # 头像背后的信息（html格式），<br/>代表换行
-
-url: https://missingroom.github.io/ # 你的域名，例如 https://wu-kan.github.io
+  SYSU超算17级在读<br/>
+  水野爱<br/>
+  HPC<br/>
+  田宫例四驱车<br/>
+  <a href="mailto:i@wu-kan.cn">
+    <i class="fas fa-envelope"></i>
+  </a>
+  <a href="https://github.com/wu-kan">
+    <i class="fab fa-github"></i>
+  </a>
+  <a href="https://codeforces.com/profile/WuK">
+    <i class="fas fa-chart-bar"></i>
+  </a>
+  <a href="https://vjudge.net/user/WuK">
+    <i class="fas fa-smile"></i>
+  </a>
+  <a href="https://www.zhihu.com/people/wu.kan/activities">
+    <i class="fab fa-zhihu"></i>
+  </a>
+  <iframe
+    src="https://music.163.com/outchain/player?type=0&id=155059595&auto=0&height=32"
+    width=100%
+    height=52
+    frameborder="no"
+    border="0"
+    marginwidth="0"
+    marginheight="0"
+  ></iframe>
+url: https://wu-kan.cn # 你的域名，例如 https://wu-kan.github.io
 baseurl: "" # 假如你的博客是建在某个目录下的，请在这里加上目录名，并且下面配置的所有链接里的`/assets`前也要加，即`/your_baseurl/assets`。这一项结尾不要有'/'。
 
 defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/front-matter-defaults/>功能进行配置
@@ -34,12 +61,12 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
             - | # 网站小图标，可换成你自己的图片，改href中的部分即可
               <link
                 rel="apple-touch-icon-precomposed"
-                href="https://cdn.luogu.com.cn/upload/usericon/55707.png"
+                href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=320"
               />
               <link
                 rel="shortcut
                 icon"
-                href="https://cdn.luogu.com.cn/upload/usericon/55707.png"
+                href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=32"
               />
             - | # 来自lanyon的页面样式，不要改
               <link
@@ -390,6 +417,20 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
                 <div>
                   <i class="fas fa-copyright fa-fw"></i>
                   2017-2020 WuK
+                </div>
+              - | # 我的备案信息，请你的网站删掉这一项。互联网非法外之地！
+                <div>
+                  <i class="fas fa-info-circle fa-fw"></i>
+                  <a href="http://beian.miit.gov.cn">
+                    粤ICP备 20024947号
+                  </a>
+                </div>
+              - | # 公安网备信息
+                <div>
+                  <img src="http://www.beian.gov.cn/img/new/gongan.png" class="fa-fw"></img>
+                  <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34070202000407">
+                    皖公网安备 34070202000407号
+                  </a>
                 </div>
             wordcount: # 全站字数统计
               enable: false # 本地调试时建议关闭，非常影响站点生成速度（所需时间与博文数量的平方成正比）
