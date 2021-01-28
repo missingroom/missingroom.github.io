@@ -1,6 +1,18 @@
 title: gxy001 # 站点标题
 description: | # 头像背后的信息（html格式），<br/>代表换行
-  Hello!
+  Hello<br/>
+  <a href="mailto:i@wu-kan.cn">
+    <i class="fas fa-envelope"></i>
+  </a>
+  <a href="https://github.com/missingroom">
+    <i class="fab fa-github"></i>
+  </a>
+  <a href="https://codeforces.com/profile/gxy001">
+    <i class="fas fa-chart-bar"></i>
+  </a>
+  <a href="https://www.luogu.com.cn/user/55707">
+    <i class="fas fa-smile"></i>
+  </a>
 url: https://missingroom.github.io # 你的域名，例如 https://wu-kan.github.io
 baseurl: "" # 假如你的博客是建在某个目录下的，请在这里加上目录名，并且下面配置的所有链接里的`/assets`前也要加，即`/your_baseurl/assets`。这一项结尾不要有'/'。
 
@@ -12,7 +24,7 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
       jekyll-theme-WuK: # 我的主题的自定义样式都在这个命名空间
         default:
           body:
-            theme-base: theme-base-0f # 可选的主题色包括08~0f，见 <https://github.com/poole/lanyon>
+            theme-base: theme-base-08 # 可选的主题色包括08~0f，见 <https://github.com/poole/lanyon>
             layout-reverse: true # 开启后sidebar在右边，反之左边
             sidebar-overlay: true # 开启后正文不随sidebar移动而移动
           append_to_head: # 通过内嵌html的方式引入并定制插件，删改前确定知道自己在做什么。定制插件的方式可以参考这篇文章 <https://wu-kan.cn/_posts/2019-01-18-基于Jekyll搭建个人博客/>
@@ -202,7 +214,7 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
             disable: false # 是否不显示sidebar
             avatar: # 侧边栏显示的头像
               enable: true
-              img: https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=320 # 头像的地址
+              img: https://cdn.luogu.com.cn/upload/usericon/55707.png # 头像的地址
             nav: # 导航部分的内容，你也可以自己增加文字、图标（来自fontawesome）和对应的链接
               - title: '<i class="fas fa-home fa-fw"></i> 首页'
                 href: /
@@ -351,7 +363,7 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
                     document.getElementById("run_time_hour"),
                     document.getElementById("run_time_minute"),
                     document.getElementById("run_time_second"),
-                    "10/04/2017 11:03:56")// 这是我第一篇CSDN博客的时间
+                    "28/01/2021 09:40:00")// 这是我第一篇CSDN博客的时间
                   </script>
                 </div>
               - | # 不蒜子页面统计，看不懂可不改
