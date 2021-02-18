@@ -140,7 +140,7 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
                   min-height: 100%;
                   display: inline-block;
                   background-size: cover;
-                  background-position: 0% 0%;
+                  background-position: center;
                   background-repeat: no-repeat;
                   background-attachment: fixed;
                   background-image: url(https://ae01.alicdn.com/kf/U8f89a5e3e6f44a44a07cf6300eec0d7dT.jpg);
