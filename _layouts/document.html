@@ -1,0 +1,12 @@
+---
+layout: default
+---
+{% for node in page.jekyll-theme-WuK.document.prepend %}
+{{ node }}
+{% endfor %}
+<div class="warp">
+  {{ content }}
+</div>
+{% for node in page.jekyll-theme-WuK.document.append %}
+{{ node }}
+{% endfor %}
