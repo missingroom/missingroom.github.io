@@ -145,19 +145,19 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
                   background-attachment: fixed;
                   background-image: url(https://ae01.alicdn.com/kf/U8f89a5e3e6f44a44a07cf6300eec0d7dT.jpg);
                 }
-                @media (min-aspect-ratio: 2400/1850) {
-                  .wrap {
-                    background-image: url(https://ae01.alicdn.com/kf/U8f89a5e3e6f44a44a07cf6300eec0d7dT.jpg);
-                  }
-                }
-                .sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
-                  width: calc(100% - 14rem);
-                  background-size: calc(100% - 14rem) auto;
-                  transform: translateX(14rem);
-                }
-                .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
-                  transform: translateX(0);
-                }
+#                @media (min-aspect-ratio: 2400/1850) {
+#                  .wrap {
+#                    background-image: url(https://ae01.alicdn.com/kf/U8f89a5e3e6f44a44a07cf6300eec0d7dT.jpg);
+#                  }
+#                }
+#                .sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
+#                  width: calc(100% - 14rem);
+#                  background-size: calc(100% - 14rem) auto;
+#                  transform: translateX(14rem);
+#                }
+#                .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
+#                  transform: translateX(0);
+#                }
               </style>
             - | # 网站字体，要换字体建议架梯子上<https://fonts.google.com/>挑选，再通过fonts.loli.net 加速引入
               <style>
@@ -360,7 +360,7 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
                     document.getElementById("run_time_hour"),
                     document.getElementById("run_time_minute"),
                     document.getElementById("run_time_second"),
-                    "01/28/2021 09:40:00")// 这是我第一篇CSDN博客的时间
+                    "02/01/2021 00:00:00")
                   </script>
                 </div>
               - | # 不蒜子页面统计，看不懂可不改
@@ -398,7 +398,7 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
               - | # Copyright声明
                 <div>
                   <i class="fas fa-copyright fa-fw"></i>
-                  2017-2020 WuK
+                  2021-2021 gxy001's blog
                 </div>
             wordcount: # 全站字数统计
               enable: false # 本地调试时建议关闭，非常影响站点生成速度（所需时间与博文数量的平方成正比）
