@@ -1,6 +1,9 @@
 title: gxy001 # 站点标题
 description: | # 头像背后的信息（html格式），<br/>代表换行
-  Hello<br/>
+  鲸落于海，星沉苍穹<br/>
+  <a href="mailto:i@wu-kan.cn">
+    <i class="fas fa-envelope"></i>
+  </a>
   <a href="https://github.com/missingroom">
     <i class="fab fa-github"></i>
   </a>
@@ -10,6 +13,15 @@ description: | # 头像背后的信息（html格式），<br/>代表换行
   <a href="https://www.luogu.com.cn/user/55707">
     <i class="fas fa-luogu"></i>
   </a>
+  <iframe
+    src="https://music.163.com/outchain/player?type=0&id=1464841701&auto=0&height=32"
+    width=100%
+    height=52
+    frameborder="no"
+    border="0"
+    marginwidth="0"
+    marginheight="0"
+  ></iframe>
 url: https://missingroom.github.io # 你的域名，例如 https://wu-kan.github.io
 baseurl: "" # 假如你的博客是建在某个目录下的，请在这里加上目录名，并且下面配置的所有链接里的`/assets`前也要加，即`/your_baseurl/assets`。这一项结尾不要有'/'。
 
