@@ -55,12 +55,12 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
             - | # 网站小图标，可换成你自己的图片，改href中的部分即可
               <link
                 rel="apple-touch-icon-precomposed"
-                href="https://cdn.luogu.com.cn/upload/usericon/55707.png"
+                href="/assets/image/55707.png"
               />
               <link
                 rel="shortcut
                 icon"
-                href="https://cdn.luogu.com.cn/upload/usericon/55707.png"
+                href="/assets/image/55707.png"
               />
             - | # 来自lanyon的页面样式，不要改
               <link
@@ -155,21 +155,21 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
                   background-position: center;
                   background-repeat: no-repeat;
                   background-attachment: fixed;
-                  background-image: url(https://ae01.alicdn.com/kf/U8f89a5e3e6f44a44a07cf6300eec0d7dT.jpg);
+                  background-image: url(/assets/image/background.jpg);
                 }
-               @media (min-aspect-ratio: 2400/1850) {
-                 .wrap {
-                   background-image: url(https://ae01.alicdn.com/kf/U8f89a5e3e6f44a44a07cf6300eec0d7dT.jpg);
-                 }
-               }
-               .sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
-                 width: calc(100% - 14rem);
-                 background-size: cover;
-                 transform: translateX(14rem);
-               }
-               .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
-                 transform: translateX(0);
-               }
+                @media (min-aspect-ratio: 2400/1850) {
+                  .wrap {
+                    background-image: url(/assets/image/background.jpg);
+                  }
+                }
+                .sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
+                  width: calc(100% - 14rem);
+                  background-size: cover;
+                  transform: translateX(14rem);
+                }
+                .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
+                  transform: translateX(0);
+                }
               </style>
             - | # 网站字体，要换字体建议架梯子上<https://fonts.google.com/>挑选，再通过fonts.loli.net 加速引入
               <style>
@@ -223,7 +223,7 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
             disable: false # 是否不显示sidebar
             avatar: # 侧边栏显示的头像
               enable: true
-              img: https://img.imgdb.cn/item/5f547b24160a154a67081a2c.jpg # 头像的地址
+              img: /assets/image/login-bg.jpg # 头像的地址
             nav: # 导航部分的内容，你也可以自己增加文字、图标（来自fontawesome）和对应的链接
               - title: '<i class="fas fa-home fa-fw"></i> 首页'
                 href: /
