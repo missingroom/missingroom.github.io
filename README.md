@@ -24,5 +24,5 @@ title: home
 
 <!-- .slide vertical=true -->
 
-[狄利克雷生成函数（$\text{DGF}$）浅谈](https://missingroom.github.io/_posts/2021-02-01-DGF学习笔记/)
+[狄利克雷生成函数浅谈](https://missingroom.github.io/_posts/2021-02-01-DGF学习笔记/)
 
