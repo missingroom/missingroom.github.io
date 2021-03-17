@@ -20,9 +20,12 @@ title: home
 
 <!-- .slide -->
 
-## 知识点总结入口
+## 学习笔记入口
 
 <!-- .slide vertical=true -->
 
-[狄利克雷生成函数浅谈](https://missingroom.github.io/_posts/2021-02-01-DGF学习笔记/)
+[狄利克雷生成函数学习笔记](https://missingroom.github.io/_posts/2021-02-01-DGF学习笔记/)
 
+[树分块学习笔记](https://missingroom.github.io/_posts/2021-03-13-树分块学习笔记/)
+
+[鞅与停时定理学习笔记](https://missingroom.github.io/_posts/2021-03-17-鞅与停时定理学习笔记/)
