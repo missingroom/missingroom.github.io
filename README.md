@@ -31,3 +31,5 @@ title: home
 [鞅与停时定理学习笔记](/_posts/2021-03-17-鞅与停时定理学习笔记/)
 
 [万能欧几里得算法学习笔记](https://missingroom.github.io/_posts/2022-04-19-万欧学习笔记/)
+
+[拉格朗日反演学习笔记](https://missingroom.github.io/_posts/2022-04-19-拉反学习笔记/)
