@@ -33,3 +33,5 @@ title: home
 [万能欧几里得算法学习笔记](https://missingroom.github.io/_posts/2022-04-19-万欧学习笔记/)
 
 [拉格朗日反演学习笔记](https://missingroom.github.io/_posts/2022-04-19-拉反学习笔记/)
+
+[K 进制 FWT 学习笔记](https://missingroom.github.io/_posts/2022-05-25-K进制FWT学习笔记/)
