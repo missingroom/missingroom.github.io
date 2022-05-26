@@ -151,7 +151,7 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
                   transition-timing-function: ease-in-out;
                   min-height: 100%;
                   display: inline-block;
-                  background-size: 3840px 2160px;
+                  background-size: cover;
                   background-position: center;
                   background-repeat: no-repeat;
                   background-attachment: fixed;
@@ -160,19 +160,13 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
                 @media (min-aspect-ratio: 2400/1850) {
                   .wrap {
                     background-image: url(/assets/image/background.png);
-                  	background-attachment: fixed;
                   }
                 }
                 .sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
                   width: calc(100% - 14rem);
-                  background-size: 3840px 2160px;
-                  background-position: center;
-                  background-repeat: no-repeat;
-                  background-attachment: fixed;
                   transform: translateX(14rem);
                 }
                 .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
-                  background-attachment: fixed;
                   transform: translateX(0);
                 }
               </style>
