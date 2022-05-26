@@ -164,7 +164,6 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
                 }
                 .sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
                   width: calc(100% - 14rem);
-                  background-size: calc(100% - 14rem) auto;
                   transform: translateX(14rem);
                 }
                 .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
