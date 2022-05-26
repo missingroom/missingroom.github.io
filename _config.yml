@@ -210,7 +210,7 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
             - | # 彩虹滚动条，仅对Chrome系浏览器生效
               <style>
                 ::-webkit-scrollbar {
-                  width: 5px;
+                  width: 4px;
                   height: 3px;
                 }
                 ::-webkit-scrollbar-thumb {
