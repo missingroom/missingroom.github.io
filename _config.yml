@@ -225,7 +225,7 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
                 }
               </style>
           sidebar: # 此配置项下是一些关于侧边栏的配置
-            disable: true # 是否不显示sidebar
+            disable: false # 是否不显示sidebar
             avatar: # 侧边栏显示的头像
               enable: true
               img: /assets/image/login-bg.jpg # 头像的地址
