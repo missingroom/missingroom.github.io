@@ -66,7 +66,7 @@ $F(x)$ 满足的微分方程是 $F(x)+(x-1)F^{\prime}(x)=(n+1)x^{n}$。
 
 即 $-nF(x)+((2-n)x+n)F^{\prime}(x)+(x^2-x)F^{\prime\prime}(x)=0$​。
 
-设 $F_0(x+q)=F(x+q)\bmod x^{n+1}$。
+设 $F_0(x+q)=F(x+q)\bmod x^{k+1}$。
 
 $$
 -nF(x+q)+((2-n)(x+q)+n)F^{\prime}(x+q)+((x+q)^2-(x+q))F^{\prime\prime}(x+q)=0\\
@@ -93,6 +93,7 @@ $$
 递推即可，注意特判 $q=1$。
 
 然后根据
+
 $$
 -nF_0(x)+((2-n)x+n)F_0^{\prime}(x)+(x^2-x)F_0^{\prime\prime}(x)=a(x-q)^k+b(x-q)^{k-1}
 $$
@@ -106,7 +107,36 @@ $$
 
 我们已知 $f_{k+1}=0$，就可以求出 $f_{0\sim k}$ 了，那么答案就是 $\sum_{i=0}^ni^kq^i=\sum_{i=0}^kf_i[\frac{x^k}{k!}](qe^x)^i=\sum_{i=0}^kf_iq^ii^k$。
 
+注意， $n\le k$ 的时候求解 $f_i$ 时的 $(i-n)$ 会出问题，暴力即可。
+
 ### P6667
 
-给出一个 $m$ 次多项式 $f(x)$ 在 $0\sim m$ 处的点值，和两个整数 $n,x$，求 $\sum_{k=0}^nf(k)\binom nkx^k(1-x)^{n-k}$。目标复杂度 $O(m)$。
+给出一个 $m$ 次多项式 $h(x)$ 在 $0\sim m$ 处的点值，和两个整数 $n,q$，求 $\sum_{k=0}^n h(k)\binom nkq^k(1-q)^{n-k}$。目标复杂度 $O(m)$。
 
+我们已知的是 $\forall 0\le k\le m,\sum_{i=0}^m h_i k^i=\sum_{i=0}^m h_i[\frac{x^i}{i!}] (e^x)^k$。
+
+首先我们要求的就是 $\sum_{i=0}^mh_i\sum_{k=0}^nk^i\binom nkq^k(1-q)^{n-k}=\sum_{i=0}^mh_i[\frac{x^i}{i!}]\sum_{k=0}^n\binom nk(qe^x)^k(1-q)^{n-k}$。
+
+设 $G(x)=e^x$，$F(x)=\sum_{k=0}^n\binom nk(qx)^k(1-q)^{n-k}=(qx+1-q)^n$。
+
+$F(x)$ 满足的微分方程是 $(qx+1-q)F^{\prime}(x)-nqF(x)=0$。
+
+设 $F_0(x+1)=F(x+1)\bmod x^{m+1}$。
+
+$$
+(q(x+1)+1-q)F^{\prime}(x+1)-nqF(x+1)=0\\
+(qx+1)F^{\prime}(x+1)-nqF(x+1)=0\\
+(qx+1)F_0^{\prime}(x+1)-nqF_0(x+1)=ax^m\\
+$$
+设 $b=[x^m]F(x+1)=[x^m](qx+1)^n=\binom nmq^m$，那么 $a=qmb-nqb=(m-n)\binom nmq^{m+1}$。
+
+所以我们有
+$$
+(qx+1-q)F_0^{\prime}(x)-nqF_0(x)=a(x-1)^m\\
+$$
+设 $[x^i]F_0(x)=f_i$，那么有
+$$
+qif_i+(1-q)(i+1)f_{i+1}-nqf_i=a(-1)^{m-i}\binom mi\\
+f_i=\frac{a(-1)^{m-i}\binom mi+(q-1)(i+1)f_{i+1}}{q(i-n)}
+$$
+递推即可，注意， $n\le m$ 的时候求解 $f_i$ 时的 $(i-n)$ 会出问题，暴力即可。
