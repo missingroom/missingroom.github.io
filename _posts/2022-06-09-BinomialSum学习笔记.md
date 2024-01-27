@@ -11,7 +11,7 @@ sto EntropyIncreaser orz
 
 对于一个微分有限的生成函数 $F(x)$，和一个生成函数 $G(x)$，和一个数列 $a$，如果我们对于每个 $0\le k\le n$ 知道 $\sum_{j=0}^na_j[x^j]G(x)^k$，那么我们可以在 $\Theta(n)$ 内计算出 $\sum_{j=0}^na_j[x^j]F(G(x))$。
 
-## 解决方法
+## 解决方法G
 
 设 $F(x)$ 对应的微分方程为 $\sum_{i=0}^kQ_i(x)F^{(i)}(x)=0$，这里我们认为 $k$ 和 $Q_i(x)$ 的次数是常数，设 $G(x)$ 的常数项为 $c$。
 
@@ -37,7 +37,7 @@ sto EntropyIncreaser orz
 
 对于一个 $n$ 次多项式 $f$，给出 $n+1$ 个数 $f(0),f(1),\cdots,f(n)$，和一个数 $k$，求 $f(k)$。
 
-我们对于 $0\le i\le n$，知道 $\sum_{j=0}^nf_ji^j=\sum_{j=0}^nf_j[\frac{x^j}{j!}](e^x)^i$，想要求解 $\sum_{j=0}^nf_jk^j=\sum_{j=0}^nf_j[\frac{x^j}{j!}](e^x)^k$。
+我们对于 $0\le i\le n$，知道 $\sum_{j=0}^nf_ji^j=\sum_{j=0}^nf_j[\frac{x^j}{j!}] (e^x)^i$，想要求解 $\sum_{j=0}^nf_jk^j=\sum_{j=0}^nf_j[\frac{x^j}{j!}] (e^x)^k$。
 
 问题描述中的 $a$ 数列就是 $f$ 的系数，$G(x)$ 取 $e^x$，$F(x)$ 就是 $x^k$。
 
@@ -60,11 +60,11 @@ $$
 
 给定 $n,q,k$，求 $\sum_{i=0}^ni^kq^i$。目标复杂度 $O(k)$。
 
-$G(x)$ 取 $qe^x$，$F(x)$ 取 $\frac{1-x^{n+1}}{1-x}$，我们已知 $\forall 0\le i\le k,[\frac{x^k}{k!}](qe^x)^i=q^ii^k$，求 $\sum_{i=0}^ni^kq^i=[\frac{x^k}{k!}]F(G(x))$。
+$G(x)$ 取 $qe^x$，$F(x)$ 取 $\frac{1-x^{n+1}}{1-x}$，我们已知 $\forall 0\le i\le k,[\frac{x^k}{k!}] (qe^x)^i=q^ii^k$，求 $\sum_{i=0}^ni^kq^i=[\frac{x^k}{k!}] F(G(x))$。
 
 $F(x)$ 满足的微分方程是 $F(x)+(x-1)F^{\prime}(x)=(n+1)x^{n}$。
 
-即 $-nF(x)+((2-n)x+n)F^{\prime}(x)+(x^2-x)F^{\prime\prime}(x)=0$​。
+$x^n$ 满足 $x(x^n)^{\prime}=nx^n$，所以有 $-nF(x)+((2-n)x+n)F^{\prime}(x)+(x^2-x)F^{\prime\prime}(x)=0$​。
 
 设 $F_0(x+q)=F(x+q)\bmod x^{k+1}$。
 
