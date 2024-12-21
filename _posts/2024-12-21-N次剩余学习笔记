@@ -1,0 +1,241 @@
+---
+title: N 次剩余学习笔记
+tags: 数学
+---
+
+看了不求离散对数求任意模数 $n$ 次剩余的那篇题解，但是没看懂牛顿迭代，仔细思考发现根本不用牛顿迭代，故做此题解。
+
+记 $\Z_m=[0,m-1]\cap \Z$。
+
+解方程 $x^n\equiv k\pmod m$，其中 $x\in \Z_m$。
+
+首先对 $m$ 分解质因数，对每个素数幂单独考虑，最后在 CRT，设模数为 $p^c$，将 $k$ 对 $p^c$ 取模后，分类讨论。
+
+若 $k=0$，答案为 $0$。
+
+若 $p\mid k$，设 $h$ 满足 $p^h\mid k$ 且 $p^{h+1}\nmid k$，则若 $n\nmid h$ 无解，否则我们求解 $y^n\equiv \frac{k}{p^h}\pmod{p^{c-h}}$，我们有，$x\equiv yp^{\frac hn}\pmod{p^{c-\frac {(n-1)h}{n}}}$，即$c$ 位 $p$ 进制数 $x$，低 $\frac hn$ 位为 $0$，高 $\frac{(n-1)h}{n}$ 位为 $1$，中间 $c-h$ 位为任意 $y$。
+
+现在问题转化为 $p\nmid k$，此时我们可以将 $n$ 对 $\phi=\varphi(p^c)/(1+[p=2\land c>2])$ 取模（这里的 $/(1+[p=2\land c>2])$ 是因为 $2^c$ 的乘法群结构不同，为 $2^{c-2}$ 阶循环群 $\times$ $2$ 阶循环群，其余时候乘法群都是 $\varphi(p^c)=p^{c-1}(p-1)$ 阶循环群）。
+
+若 $n=0$，显然此时 $k$ 必须为 $1$，$k=1$ 时，答案为 $\{x|\gcd(x,p)=1,x\in\Z_{p^c}\}$。
+
+现在 $n\ne 0$，那么此时有解的充要条件为 $k^{\frac{\phi}{\gcd(\phi,n)}}=1$，解的个数为 $\gcd(\phi,n)$，证明的话设 $k=g^a$（$g$ 是原根）就好，这里不展开了。
+
+$n=1$ 时，答案为 $k$。
+
+令 $g=\gcd(\phi,n),q=(\frac ng)^{-1}\bmod \phi$，如果 $q$ 存在，我们就可以转化为求 $k^q$ 的 $g$ 次剩余了，但是 $q$ 可能不存在，此时我们注意到 $n$ 可以多次加 $\phi$ 不改变结果，我们随机 $c\in \Z_g$，求 $q=(\frac {n+c\phi}g)^{-1}\bmod \phi$，直到其存在。
+
+关于这一行为的成功率，我们对 $\phi$ 的每个质因数 $p_0$ 分类讨论（CRT），会发现当 $n$ 中 $p_0$ 的次数小于 $\phi$ 中次数的时候，无论 $c$ 取什么，都是存在的；而 $n$ 次数大于等于 $\phi$ 次数的时候，只有 $c\bmod p_0$ 等于某个特定值的时候才不存在。因此随机 $c$ 使得 $q$ 不存在，当前仅当 $c\bmod$（前述的后一种情况的 $p_0$ 乘积）为一个特定值时。所以成功率 $\ge \frac 12$，期望常数次即可求得。
+
+现在问题转化为 $n\mid \phi$ 的情况，我们对 $n$ 做质因数分解，转化为求质数次剩余的情况，每次对当前的所有答案求质数次剩余，做若干轮，这并不会影响复杂度。
+
+下面这部分看的时候先假装 $p=2\land c>2$ 的情况不存在，我们一会再说明这部分。
+
+现在问题转化为 $n$ 是质数且整除 $\phi$ 的情况，我们设 $t$ 满足 $n^t\mid \phi$ 且 $n^{t+1}\nmid \phi$。
+
+现在先求出一个 $n^t$ 次单位根 $g$，我们使用如下的做法，随机 $u\in \Z_{p^c}$，若 $\gcd(c,p)=1\land u^{\frac \phi n}\ne 1$，则 $u^{\frac \phi{n^t}}$ 是一个 $n^t$ 次单位根。
+
+做法的正确性显然，但成功率是个问题，这里给出一个粗略的估计，显然 $u$ 是原根时可以成功，我们知道设循环群大小为 $k$，则原根有 $\varphi(k)$ 个，这里即是 $\varphi(\varphi(p^c))$ 个。我们又知道 $\frac{n}{\varphi(n)}=O(\log\log n)$，所以我们可以给出一个期望 $O((\log\log m)^2)$ 次的粗略估计。总之，此处的期望次数为 $o(\log m)$ 次。
+
+求出 $g$ 后，我们将所有 $n$ 次单位根 $g^0,g^{n^{t-1}},g^{2n^{t-1}}...g^{(n-1)n^{t-1}}$ 放入哈希表记录对应的指数。
+
+令 $d=\frac \phi{n^t}$，$D=d^{-1}\bmod n$，$K=k^{-D}\bmod p^c$，$N=\frac{dD-1}{n}$。
+
+维护下面这样一个流程，初始时，$a=\frac \phi n$，$b=0$，此时 $K^ag^b\bmod p^c=1$，然后令 $a\larr\frac an$，$b\larr\frac bn$，此时 $K^ag^b\bmod p^c$ 应当等于某个 $n$ 次单位根，查哈希表，查出值对应为 $g^w$，令 $b\larr b-w$，此时又有 $K^ag^b\bmod p^c=1$。重复这一流程，总共进行 $t-1$ 次。
+
+流程完毕后，式子应当形如 $K^dg^{w_1n+w_2n^2+\dots+w_{t-1}n^{t-1}}\bmod p^c=1$，即 $k^{-Dd}g^b\bmod p^c=1$，也即 $k^{-nN}g^b\bmod p^c=k$，两边取 $n$ 次剩余，$x\equiv k^{-N}g^{\frac bn}\pmod {p^c}$。
+
+这样我们就求出了一个解，而解一共有 $n$ 个，是这个解乘上所有的 $n$ 次单位根。
+
+单次的时间复杂度为 $O(\log^2 m+n)$（$t$ 是 $O(\log m)$，每次又需要快速幂）
+
+设总解数为 $s$，那么总时间复杂度大致可以认为是 $O(s\log^2 m)$（没有计算分解质因数的时间复杂度）。
+
+那么这题就做完了。
+
+诶等会没完，$p=2\land c>2$ 的情况需要说明。
+
+由于此时是一个 $2^{c-2}$ 阶循环群 $\times$ $2$ 阶循环群，而且 $\phi=2^{c-2}$，那么 $n$ 只能为 $2$，此时我们得到的 $g$ 是 $2^{c-2}$ 阶循环群中的一个原根 $\times$ $2$ 阶循环群中的任意一个数，按照这个做法做下去，结果不会错误，但是会少一半的答案，因为我们可以发现求出的答案中每个 $2^{c-2}$ 阶循环群中的答案只与一个 $2$ 阶循环群中的值组合，实际上两个值的组合都是可行的，因此，我们把求出的答案的相反数也加入答案即可。
+
+```cpp
+#include<iostream>
+#include<vector>
+#include<numeric>
+#include<ranges>
+#include<algorithm>
+#include<unordered_map>
+#include<chrono>
+#include<random>
+std::mt19937 rnd(std::chrono::system_clock::now().time_since_epoch().count());	
+using std::cin,std::cout;
+int pow(int x,int y,int mod){
+	int res=1;
+	while(y){
+		if(y&1) res=1ll*res*x%mod;
+		x=1ll*x*x%mod,y>>=1;
+	}
+	return res;
+}
+int exgcd(int a,int b,int &x,int &y){
+	if(!b) return y=0,x=1,a;
+	long long res(exgcd(b,a%b,y,x));
+	return y-=a/b*x,res;
+}
+int inv(int x,int y){
+	int a=0,b=0;
+	if(exgcd(x,y,a,b)!=1) return 0;
+	return a<0?a+y:a;
+}
+int pow(int x,int y){
+	int res=1;
+	while(y){
+		if(y&1) res*=x;
+		if(y>>=1) x*=x;
+	}
+	return res;
+}
+std::vector<std::pair<int,int>> factor(int t){
+	std::vector<std::pair<int,int>> fac;
+	for(int i=2;i*i<=t;i++)if(t%i==0){
+		int ct=0;
+		while(t%i==0) ++ct,t/=i;
+		fac.emplace_back(i,ct);
+	}
+	if(t>1) fac.emplace_back(t,1);
+	return fac;
+}
+bool check(int n,int k,int p,int c){
+	int q=pow(p,c);
+	k%=q;
+	if(k==0) return true;
+	int ct=0;
+	while(k%p==0) k/=p,++ct;
+	if(ct%n) return false;
+	c-=ct;
+	int phi=q/p*(p-1);
+	n%=phi;
+	if(n==0) return k==1;
+	if(p==2&&c>2) phi/=2;
+	return pow(k,phi/std::gcd(n,phi),q)==1;
+}
+std::vector<int> nrt(int n,int k,int p,int c){
+	int q=pow(p,c),d=q/p*(p-1),phi=d;
+	if(p==2&&c>2) phi/=2,d/=2;
+	p=q;
+	int ct=0,w=1;
+	while(d%n==0) d/=n,++ct,w*=n;
+	w/=n;
+	std::uniform_int_distribution<int> rng(1,p-1);
+	int g=0;
+	while(true){
+		int t=rng(rnd);
+		if(std::gcd(t,p)==1){
+			int u=pow(t,w*d,p);
+			if(u!=1){
+				g=pow(t,d,p);
+				break;
+			}
+		}
+	}
+	std::unordered_map<int,int> mp;
+	mp.reserve(n);
+	for(int i=0,c=1,q=pow(g,w,p);i<n;i++,c=1ll*c*q%p) mp[c]=i;
+	k=inv(k,p);
+	int D=inv(d,n),K=pow(k,D,p);
+	int pw1=phi/n,pw2=0;
+	for(int i=1;i<ct;i++){
+		pw1/=n,pw2/=n;
+		int h=1ll*pow(K,pw1,p)*pow(g,pw2,p)%p;
+		pw2+=(n-mp[h])%n*w;
+	}
+	int t=1ll*pow(k,1ll*(D*d-1)/n%phi,p)*pow(g,pw2/n,p)%p;
+	auto it=mp|std::views::transform([t,p](auto x){return 1ll*x.first*t%p;});
+	return std::vector<int>(it.begin(),it.end());
+}
+std::vector<int> sv(int n,int k,int p,int c){
+	int q=pow(p,c),phi=q/p*(p-1);
+	if(p==2&&c>2) phi/=2;
+	n%=phi;
+	if(n==0){
+		std::vector<int> v;
+		v.reserve(phi);
+		if(p==2&&c>2) q/=2;
+		for(int i=1;i<q;i++)if(i%p)v.push_back(i);
+		return v;
+	}
+	int g=std::gcd(n,phi),w=n/g,t=phi/g,o=inv(w,phi);
+	std::uniform_int_distribution<int> rng(0,g-1);
+	while(!o) o=inv((w+1ll*rng(rnd)*t)%phi,phi);
+	n=g,k=pow(k,o,q);
+	if(n==1) return {k};
+	std::vector<int> ans{k},tmp;
+	ans.reserve(n),tmp.reserve(n);
+	for(auto [a,b]:factor(n)){
+		for(int i=1;i<=b;i++){
+			std::swap(ans,tmp);
+			ans.clear();
+			for(auto v:tmp){
+				auto res=nrt(a,v,p,c);
+				for(auto t:res) ans.push_back(t);
+			}
+		}
+	}
+	return ans;
+}
+std::vector<int> solve(int n,int k,int p,int c){
+	int q=pow(p,c);
+	k%=q;
+	if(k==0){
+		int t=pow(p,(c+n-1)/n);
+		auto it=std::views::iota(0,q/t)|std::views::transform([t](int x){return x*t;});
+		return std::vector<int>(it.begin(),it.end());
+	}
+	int h=0;
+	int w3=q;
+	while(k%p==0) k/=p,q/=p,++h;
+	c-=h;
+	int w1=pow(p,h/n),w2=pow(p,h/n+c);
+	auto res=sv(n,k,p,c);
+	std::vector<int> ans;
+	ans.reserve(res.size()*w3/w2);
+	for(auto z:res){
+		for(int i=1ll*z*w1%w2;i<w3;i+=w2) ans.push_back(i);
+		if(p==2&&c>2&&n%2==0)for(int i=1ll*(q-z)*w1%w2;i<w3;i+=w2) ans.push_back(i);
+	}
+	return ans;
+}
+void solve(){
+	int n,m,k;
+	cin>>n>>m>>k;
+	std::vector<std::pair<int,int>> fac=factor(m);
+	for(auto [p,c]:fac) if(!check(n,k,p,c)){
+		cout<<"0\n";
+		return;
+	}
+	std::vector<int> ans={0};
+	for(auto [p,c]:fac){
+		auto res=solve(n,k,p,c);
+		int q=1;
+		for(int i=1;i<=c;i++) q*=p;
+		int w=1ll*(m/q)*inv(m/q,q)%m;
+		std::vector<int> a;
+		a.reserve(ans.size()*res.size());
+		for(auto u:ans)
+			for(auto v:res)
+				a.push_back((u+1ll*w*v)%m);
+		ans=std::move(a);
+	}
+	std::ranges::sort(ans);
+	cout<<ans.size()<<'\n';
+	for(auto u:ans) cout<<u<<' ';
+	cout<<'\n';
+}
+int main(){
+	cin.tie(nullptr)->sync_with_stdio(false);
+	int T=1;
+	cin>>T;
+	while(T--) solve();
+	return 0;
+}
+```
+
